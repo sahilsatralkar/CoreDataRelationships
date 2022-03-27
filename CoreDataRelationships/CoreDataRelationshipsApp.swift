@@ -9,12 +9,19 @@ import SwiftUI
 
 @main
 struct CoreDataRelationshipsApp: App {
-    let persistenceController = PersistenceController.shared
+    
+    @StateObject var dataController : DataController
+    
+    init() {
+        let dataController = DataController()
+        _dataController = StateObject(wrappedValue: dataController)
+    }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environmentObject(dataController)
         }
     }
 }

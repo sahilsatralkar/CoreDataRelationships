@@ -15,6 +15,10 @@
 		1C89F41927EDA56400B80ED1 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89F41827EDA56400B80ED1 /* DataController.swift */; };
 		1C89F41C27EEEEDA00B80ED1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89F41B27EEEEDA00B80ED1 /* DetailView.swift */; };
 		1C89F41E27EF50CB00B80ED1 /* testUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89F41D27EF50CB00B80ED1 /* testUI.swift */; };
+		1C89F42027F0B1D100B80ED1 /* AddNewPrincipalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89F41F27F0B1D100B80ED1 /* AddNewPrincipalView.swift */; };
+		1C89F42227F0BCEA00B80ED1 /* AddNewTeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89F42127F0BCEA00B80ED1 /* AddNewTeacherView.swift */; };
+		1C89F42427F0BFAA00B80ED1 /* AddNewStudentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89F42327F0BFAA00B80ED1 /* AddNewStudentView.swift */; };
+		1C89F42627F0C3B100B80ED1 /* AddNewSchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89F42527F0C3B100B80ED1 /* AddNewSchoolView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		1C89F41A27EEE57300B80ED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1C89F41B27EEEEDA00B80ED1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1C89F41D27EF50CB00B80ED1 /* testUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testUI.swift; sourceTree = "<group>"; };
+		1C89F41F27F0B1D100B80ED1 /* AddNewPrincipalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPrincipalView.swift; sourceTree = "<group>"; };
+		1C89F42127F0BCEA00B80ED1 /* AddNewTeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTeacherView.swift; sourceTree = "<group>"; };
+		1C89F42327F0BFAA00B80ED1 /* AddNewStudentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStudentView.swift; sourceTree = "<group>"; };
+		1C89F42527F0C3B100B80ED1 /* AddNewSchoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewSchoolView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,10 @@
 				1C89F41827EDA56400B80ED1 /* DataController.swift */,
 				1C6EF54427EA08E60072CAB3 /* ContentView.swift */,
 				1C89F41B27EEEEDA00B80ED1 /* DetailView.swift */,
+				1C89F41F27F0B1D100B80ED1 /* AddNewPrincipalView.swift */,
+				1C89F42127F0BCEA00B80ED1 /* AddNewTeacherView.swift */,
+				1C89F42327F0BFAA00B80ED1 /* AddNewStudentView.swift */,
+				1C89F42527F0C3B100B80ED1 /* AddNewSchoolView.swift */,
 				1C89F41D27EF50CB00B80ED1 /* testUI.swift */,
 				1C6EF54627EA08E90072CAB3 /* Assets.xcassets */,
 				1C6EF54D27EA08E90072CAB3 /* CoreDataRelationships.xcdatamodeld */,
@@ -153,10 +165,14 @@
 			files = (
 				1C6EF54527EA08E60072CAB3 /* ContentView.swift in Sources */,
 				1C89F41927EDA56400B80ED1 /* DataController.swift in Sources */,
+				1C89F42627F0C3B100B80ED1 /* AddNewSchoolView.swift in Sources */,
 				1C6EF54F27EA08E90072CAB3 /* CoreDataRelationships.xcdatamodeld in Sources */,
+				1C89F42427F0BFAA00B80ED1 /* AddNewStudentView.swift in Sources */,
+				1C89F42027F0B1D100B80ED1 /* AddNewPrincipalView.swift in Sources */,
 				1C89F41C27EEEEDA00B80ED1 /* DetailView.swift in Sources */,
 				1C6EF54327EA08E60072CAB3 /* CoreDataRelationshipsApp.swift in Sources */,
 				1C89F41E27EF50CB00B80ED1 /* testUI.swift in Sources */,
+				1C89F42227F0BCEA00B80ED1 /* AddNewTeacherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

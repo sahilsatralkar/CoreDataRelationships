@@ -13,6 +13,8 @@ struct ContentView: View {
     
     let schools : FetchRequest<School>
     
+    @State var showingAddSchool : Bool = false
+    
     init(){
         schools = FetchRequest<School>(entity: School.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \School.date, ascending: false)])
     }
@@ -39,7 +41,6 @@ struct ContentView: View {
                 
             }
             .navigationTitle("School")
-            
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Add Sample Data") {
@@ -47,6 +48,17 @@ struct ContentView: View {
                         dataController.createSampleData()
                     }
                 }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        self.showingAddSchool = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+
+                }
+            }
+            .sheet(isPresented: $showingAddSchool) {
+                AddNewSchoolView()
             }
         }
         

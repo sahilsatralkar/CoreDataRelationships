@@ -21,6 +21,10 @@ struct DetailView: View {
     
     var principal : [Principal] = []
     
+    @State private var showingAddPrincipal : Bool = false
+    @State private var showingAddTeacher : Bool = false
+    @State private var showingAddStudent : Bool = false
+    
     init(school : School) {
         self.school = school
         
@@ -46,7 +50,7 @@ struct DetailView: View {
                     }
                     .onDelete(perform: deletePrincipal)
                     Button  {
-                        //To do
+                        self.showingAddPrincipal = true
                     } label: {
                         Text("Add Principal")
                     }
@@ -66,11 +70,10 @@ struct DetailView: View {
                     }
                     .onDelete(perform: deleteTeacher)
                     Button  {
-                        //To do
+                        self.showingAddTeacher = true
                     } label: {
                         Text("Add Teacher")
                     }
-                    
                 }
             }
             Section (header: Text("Students")) {
@@ -84,7 +87,7 @@ struct DetailView: View {
                     }
                     .onDelete(perform: deleteStudent)
                     Button  {
-                        //To do
+                        self.showingAddStudent = true
                     } label: {
                         Text("Add Student")
                     }
@@ -94,6 +97,15 @@ struct DetailView: View {
         }
         .navigationTitle(Text("Details"))
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $showingAddPrincipal) {
+            AddNewPrincipalView()
+        }
+        .sheet(isPresented: $showingAddTeacher) {
+            AddNewTeacherView()
+        }
+        .sheet(isPresented: $showingAddStudent) {
+            AddNewStudentView()
+        }
     }
     
     //Function to remove individual items

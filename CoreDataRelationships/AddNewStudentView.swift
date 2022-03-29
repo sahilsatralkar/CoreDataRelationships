@@ -11,6 +11,7 @@ struct AddNewStudentView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var moc
+    @EnvironmentObject var dataController : DataController
     
     @State private var name: String = ""
     @State private var age : String = ""
@@ -18,6 +19,7 @@ struct AddNewStudentView: View {
     
     @State private var showAlert : Bool = false
     
+    let school : School
     
     var body: some View {
         NavigationView {
@@ -40,7 +42,6 @@ struct AddNewStudentView: View {
                     } label: {
                         Text("Dismiss")
                     }
-
                 }
             }
             .toolbar {
@@ -50,18 +51,29 @@ struct AddNewStudentView: View {
                     } label: {
                         Text("Save")
                     }
-
                 }
             }
         }
     }
     func saveButton(){
-        //Add code
+        let student = Student(context: dataController.container.viewContext)
+        
+        student.name = self.name
+        student.age = Int16(Int(self.age) ?? 0)
+        student.standard = Int16(Int(self.standard) ?? 0)
+        student.id = UUID()
+        student.date = Date()
+        student.school = self.school
+        
+        dataController.save()
+        
+        self.presentationMode.wrappedValue.dismiss()
+        
     }
 }
 
-struct AddNewStudent_Previews: PreviewProvider {
-    static var previews: some View {
-        AddNewStudentView()
-    }
-}
+//struct AddNewStudent_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddNewStudentView()
+//    }
+//}

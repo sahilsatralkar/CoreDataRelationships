@@ -54,8 +54,6 @@ struct DetailView: View {
                     } label: {
                         Text("Add Principal")
                     }
-
-                    
                 }
              }
             Section (header: Text("Teachers")) {
@@ -65,7 +63,6 @@ struct DetailView: View {
                             testUI()
                         } label: {
                             Label(teacher.name ?? "", systemImage: "bolt.fill")
-                            //Label(teacher.principal?.name ?? "", systemImage: "bolt.fill")
                         }
                     }
                     .onDelete(perform: deleteTeacher)
@@ -97,13 +94,13 @@ struct DetailView: View {
         .navigationTitle(Text("Details"))
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showingAddPrincipal) {
-            AddNewPrincipalView()
+            AddNewPrincipalView(school: self.school)
         }
         .sheet(isPresented: $showingAddTeacher) {
             AddNewTeacherView(school: self.school)
         }
         .sheet(isPresented: $showingAddStudent) {
-            AddNewStudentView()
+            AddNewStudentView(school: self.school)
         }
     }
     

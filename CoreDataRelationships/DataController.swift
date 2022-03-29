@@ -224,4 +224,12 @@ class DataController : ObservableObject {
         _ = try? container.viewContext.execute(batchDeleteRequest)
         
     }
+    
+    static var preview : DataController = {
+        let dataController = DataController()
+        let viewContext = dataController.container.viewContext
+
+        dataController.createSampleData()
+        return dataController
+    }()
 }

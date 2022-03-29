@@ -11,6 +11,7 @@ struct AddNewTeacherView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var moc
+    @EnvironmentObject var dataController : DataController
     
     let school : School
     
@@ -54,11 +55,29 @@ struct AddNewTeacherView: View {
     
     func saveButton(){
         
+        let newTeacher = Teacher(context: dataController.container.viewContext)
+        newTeacher.date = Date()
+        newTeacher.name = self.name
+        newTeacher.age = Int16(Int(self.age) ?? 0)
+        newTeacher.experience = Int16(Int(self.experience) ?? 0)
+        newTeacher.school = self.school
+        newTeacher.id = UUID()
+        
+        dataController.save()
+        
+        self.presentationMode.wrappedValue.dismiss()
+        
     }
 }
 
 struct AddTeacherView_Previews: PreviewProvider {
+    
+    static var dataController = DataController.preview
+    static var school = FetchRequest<School>(entity: School.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \School.date, ascending: false)])
     static var previews: some View {
-        AddNewTeacherView()
+        
+        AddNewTeacherView(school: school.wrappedValue.first! )
+            .environment(\.managedObjectContext, dataController.container.viewContext)
+            .environmentObject(dataController)
     }
 }

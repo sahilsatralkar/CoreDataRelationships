@@ -30,11 +30,10 @@ struct ContentView: View {
                                     Text(school.name ?? "").font(.headline)
                                     Spacer()
                                     Text("Address: \(school.address ?? "")").font(.subheadline)
-                                    
                                 }.padding()
-                                
                             }
                         }
+                        .onDelete(perform: deleteSchool)
                     }
                     .listStyle(InsetGroupedListStyle())
                 }
@@ -61,8 +60,16 @@ struct ContentView: View {
                 AddNewSchoolView()
             }
         }
-        
     }
+    
+    func deleteSchool( at offsets : IndexSet) {
+        for offset in offsets {
+            let school = schools.wrappedValue[offset]
+                dataController.delete(school)
+            }
+            dataController.save()
+    }
+   
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -11,6 +11,7 @@ struct AddNewSchoolView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var moc
+    @EnvironmentObject var dataController : DataController
     
     @State private var name : String = ""
     @State private var address: String = ""
@@ -43,12 +44,21 @@ struct AddNewSchoolView: View {
                     } label: {
                         Text("Save")
                     }
-
                 }
             }
         }
     }
     func saveButton(){
+        let school = School(context: dataController.container.viewContext)
+        
+        school.id = UUID()
+        school.date = Date()
+        school.name = self.name
+        school.address = self.address
+        
+        dataController.save()
+        
+        self.presentationMode.wrappedValue.dismiss()
         
     }
 }

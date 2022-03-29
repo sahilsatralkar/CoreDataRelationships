@@ -11,6 +11,9 @@ struct AddNewPrincipalView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var moc
+    @EnvironmentObject var dataController : DataController
+    
+    let school : School
     
     @State private var showAlert : Bool = false
     
@@ -49,12 +52,23 @@ struct AddNewPrincipalView: View {
     }
     
     func saveButton() {
-        //Add code
+        let principal = Principal(context: dataController.container.viewContext)
+        
+        principal.id = UUID()
+        principal.name = self.name
+        principal.age = Int16(Int(self.age) ?? 0)
+        principal.experience = Int16(Int(self.experience) ?? 0)
+        principal.date = Date()
+        principal.school = self.school
+        
+        dataController.save()
+        
+        presentationMode.wrappedValue.dismiss()
     }
 }
 
-struct AddPrincipalView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddNewPrincipalView()
-    }
-}
+//struct AddPrincipalView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddNewPrincipalView()
+//    }
+//}

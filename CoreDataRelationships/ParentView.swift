@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct ParentView: View {
     @EnvironmentObject var dataController : DataController
     
     let schools : FetchRequest<School>
@@ -73,6 +73,6 @@ struct ContentView: View {
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ParentView()
     }
 }

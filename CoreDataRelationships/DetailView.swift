@@ -43,7 +43,7 @@ struct DetailView: View {
                 List {
                     ForEach(principal) { princ in
                         NavigationLink  {
-                            testUI()
+                            PrincipalDetailView(principal: princ)
                         } label: {
                             Label(school.principal?.name ?? "", systemImage: "star.fill")
                         }
@@ -60,7 +60,7 @@ struct DetailView: View {
                 List {
                     ForEach(teachers) { teacher in
                         NavigationLink {
-                            testUI()
+                            TeacherDetailView(teacher: teacher)
                         } label: {
                             Label(teacher.name ?? "", systemImage: "bolt.fill")
                         }
@@ -77,7 +77,7 @@ struct DetailView: View {
                 List {
                     ForEach(students) { student in
                         NavigationLink {
-                            testUI()
+                            StudentDetailView(student: student)
                         } label: {
                             Label(student.name ?? "", systemImage: "heart.fill")
                         }

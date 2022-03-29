@@ -19,7 +19,7 @@ struct CoreDataRelationshipsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ParentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(dataController)
         }

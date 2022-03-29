@@ -12,6 +12,8 @@ struct AddNewTeacherView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var moc
     
+    let school : School
+    
     @State private var name: String = ""
     @State private var age : String = ""
     @State private var subject : String = ""
@@ -51,7 +53,7 @@ struct AddNewTeacherView: View {
     }
     
     func saveButton(){
-        //Add code
+        
     }
 }
 

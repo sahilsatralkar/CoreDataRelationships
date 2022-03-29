@@ -91,7 +91,6 @@ struct DetailView: View {
                     } label: {
                         Text("Add Student")
                     }
-                    
                 }
             }
         }
@@ -101,24 +100,20 @@ struct DetailView: View {
             AddNewPrincipalView()
         }
         .sheet(isPresented: $showingAddTeacher) {
-            AddNewTeacherView()
+            AddNewTeacherView(school: self.school)
         }
         .sheet(isPresented: $showingAddStudent) {
             AddNewStudentView()
         }
     }
     
-    //Function to remove individual items
-
-    
+    //Function to remove individual items    
     func deleteTeacher( at offsets : IndexSet) {
         for offset in offsets {
                 let teacher = teachers[offset]
                 dataController.delete(teacher)
             }
-
             dataController.save()
-        
     }
     
     func deleteStudent( at offsets : IndexSet) {
@@ -126,9 +121,7 @@ struct DetailView: View {
                 let student = students[offset]
                 dataController.delete(student)
             }
-
             dataController.save()
-        
     }
     
     func deletePrincipal( at offsets : IndexSet) {
@@ -136,13 +129,9 @@ struct DetailView: View {
                 let princi = principal[offset]
                 dataController.delete(princi)
             }
-
             dataController.save()
-        
     }
 }
-
-
 
 //struct DetailView_Previews: PreviewProvider {
 //    static var dataController = DataController()

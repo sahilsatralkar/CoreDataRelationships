@@ -54,6 +54,7 @@ struct PrincipalDetailView_Previews: PreviewProvider {
     
     static var previews: some View {
         let principal = Principal(context: dataController.container.viewContext)
+        principal.name = "Dolores Umbridge"
         
         return PrincipalDetailView(principal: principal)
     }

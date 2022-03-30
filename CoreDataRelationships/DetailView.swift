@@ -14,9 +14,9 @@ struct DetailView: View {
     
     let school : School
     
-    let teachers : [Teacher]
+    var teachers : [Teacher]
     
-    let students : [Student]
+    var students : [Student]
     
     var principal : [Principal] = []
     
@@ -28,8 +28,11 @@ struct DetailView: View {
         self.school = school
         
         self.teachers  = school.teachers?.allObjects as! [Teacher]
+        self.teachers = self.teachers.sorted(by: {$0.name! < $1.name!})
+        
         
         self.students = school.students?.allObjects as! [Student]
+        self.students = self.students.sorted(by: {$0.date! < $1.date!})
         
         if let prin = school.principal {
             self.principal.append(prin)

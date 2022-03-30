@@ -67,8 +67,11 @@ struct AddNewPrincipalView: View {
     }
 }
 
-//struct AddPrincipalView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddNewPrincipalView()
-//    }
-//}
+struct AddPrincipalView_Previews: PreviewProvider {
+    static let dataController = DataController.preview
+    
+    static var previews: some View {
+        let school = School(context: dataController.container.viewContext)
+        return AddNewPrincipalView(school: school).environment(\.managedObjectContext, dataController.container.viewContext).environmentObject(dataController)
+    }
+}

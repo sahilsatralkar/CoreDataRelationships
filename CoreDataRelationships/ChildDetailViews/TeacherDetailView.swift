@@ -10,11 +10,11 @@ import SwiftUI
 struct TeacherDetailView: View {
     
     let teacher : Teacher
-    var school : School {
-        teacher.school ?? School()
+    var school : School? {
+        teacher.school
     }
-    var principal : Principal {
-        teacher.principal ?? Principal()
+    var principal : Principal? {
+        teacher.principal
     }
     var students : [Student] {
         teacher.students?.allObjects as? [Student] ?? []
@@ -29,12 +29,12 @@ struct TeacherDetailView: View {
             }
             Section (header: Text("School")) {
                 List {
-                    Text(school.name ?? "")
+                    Text(school?.name ?? "")
                 }
             }
             Section (header : Text ("Principal")) {
                 List {
-                    Text (principal.name ?? "")
+                    Text (principal?.name ?? "")
                 }
             }
             Section (header: Text("Students")) {
@@ -55,6 +55,7 @@ struct TeacherDetailView_Previews: PreviewProvider {
     
     static var previews: some View {
         let teacher = Teacher(context: dataController.container.viewContext)
+        teacher.name = "Sirius Black"
         
         return TeacherDetailView(teacher: teacher)
     }

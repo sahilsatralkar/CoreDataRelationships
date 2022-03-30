@@ -11,12 +11,12 @@ struct StudentDetailView: View {
     
     let student : Student
     
-    var school : School {
-        student.school ?? School()
+    var school : School? {
+        student.school
     }
     
-    var principal : Principal {
-        student.principal ?? Principal()
+    var principal : Principal? {
+        student.principal 
     }
     
     var teachers : [Teacher] {
@@ -32,12 +32,12 @@ struct StudentDetailView: View {
             }
             Section (header : Text("School")) {
                 List {
-                    Text (school.name ?? "")
+                    Text (school?.name ?? "")
                 }
             }
             Section (header: Text("Principal")) {
                 List {
-                    Text (principal.name ?? "")
+                    Text (principal?.name ?? "")
                 }
             }
             Section (header : Text ("Teachers")) {
@@ -59,6 +59,7 @@ struct StudentDetailView_Previews: PreviewProvider {
     
     static var previews: some View {
         let student = Student(context: dataController.container.viewContext)
+        student.name = "Cedric Diggory"
         return StudentDetailView(student: student)
     }
 }

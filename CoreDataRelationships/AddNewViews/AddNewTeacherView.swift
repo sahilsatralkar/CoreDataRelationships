@@ -73,10 +73,11 @@ struct AddNewTeacherView: View {
 struct AddTeacherView_Previews: PreviewProvider {
     
     static var dataController = DataController.preview
-    static var school = FetchRequest<School>(entity: School.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \School.date, ascending: false)])
+    
     static var previews: some View {
+        let school = School(context: dataController.container.viewContext)
         
-        AddNewTeacherView(school: school.wrappedValue.first! )
+        AddNewTeacherView(school: school )
             .environment(\.managedObjectContext, dataController.container.viewContext)
             .environmentObject(dataController)
     }

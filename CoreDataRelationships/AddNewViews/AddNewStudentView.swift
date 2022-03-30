@@ -72,8 +72,10 @@ struct AddNewStudentView: View {
     }
 }
 
-//struct AddNewStudent_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddNewStudentView()
-//    }
-//}
+struct AddNewStudent_Previews: PreviewProvider {
+    static let dataController = DataController.preview
+    static var previews: some View {
+        let school = School(context: dataController.container.viewContext)
+        AddNewStudentView(school: school)
+    }
+}

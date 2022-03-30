@@ -43,7 +43,6 @@ struct ParentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Add Sample Data") {
-                        //dataController.deleteAll()
                         dataController.createSampleData()
                     }
                 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2A0E6527F4660B00407414 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 1C2A0E6227F4660B00407414 /* LICENSE.md */; };
+		1C2A0E6627F4660B00407414 /* CODE_OF_CONDUCT.md in Resources */ = {isa = PBXBuildFile; fileRef = 1C2A0E6327F4660B00407414 /* CODE_OF_CONDUCT.md */; };
+		1C2A0E6727F4660B00407414 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1C2A0E6427F4660B00407414 /* README.md */; };
 		1C6EF54327EA08E60072CAB3 /* CoreDataRelationshipsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EF54227EA08E60072CAB3 /* CoreDataRelationshipsApp.swift */; };
 		1C6EF54527EA08E60072CAB3 /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6EF54427EA08E60072CAB3 /* ParentView.swift */; };
 		1C6EF54727EA08E90072CAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6EF54627EA08E90072CAB3 /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C2A0E6227F4660B00407414 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		1C2A0E6327F4660B00407414 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
+		1C2A0E6427F4660B00407414 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1C6EF53F27EA08E60072CAB3 /* iSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C6EF54227EA08E60072CAB3 /* CoreDataRelationshipsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRelationshipsApp.swift; sourceTree = "<group>"; };
 		1C6EF54427EA08E60072CAB3 /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
@@ -56,6 +62,9 @@
 		1C6EF53627EA08E60072CAB3 = {
 			isa = PBXGroup;
 			children = (
+				1C2A0E6327F4660B00407414 /* CODE_OF_CONDUCT.md */,
+				1C2A0E6227F4660B00407414 /* LICENSE.md */,
+				1C2A0E6427F4660B00407414 /* README.md */,
 				1C6EF54127EA08E60072CAB3 /* CoreDataRelationships */,
 				1C6EF54027EA08E60072CAB3 /* Products */,
 			);
@@ -174,7 +183,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C6EF54A27EA08E90072CAB3 /* Preview Assets.xcassets in Resources */,
+				1C2A0E6527F4660B00407414 /* LICENSE.md in Resources */,
+				1C2A0E6727F4660B00407414 /* README.md in Resources */,
 				1C6EF54727EA08E90072CAB3 /* Assets.xcassets in Resources */,
+				1C2A0E6627F4660B00407414 /* CODE_OF_CONDUCT.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

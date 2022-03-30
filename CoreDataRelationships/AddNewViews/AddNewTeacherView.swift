@@ -105,6 +105,8 @@ struct AddNewTeacherView: View {
             newTeacher.experience = Int16(Int(self.experience) ?? 0)
             newTeacher.school = self.school
             newTeacher.id = UUID()
+            newTeacher.principal = self.school.principal
+            newTeacher.students = self.school.students
             
             dataController.save()
             

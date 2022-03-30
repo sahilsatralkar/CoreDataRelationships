@@ -92,6 +92,8 @@ struct AddNewStudentView: View {
             student.id = UUID()
             student.date = Date()
             student.school = self.school
+            student.principal = self.school.principal
+            student.teachers = self.school.teachers
             
             dataController.save()
             

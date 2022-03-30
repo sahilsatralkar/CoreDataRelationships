@@ -28,7 +28,7 @@ struct DetailView: View {
         self.school = school
         
         self.teachers  = school.teachers?.allObjects as! [Teacher]
-        self.teachers = self.teachers.sorted(by: {$0.name! < $1.name!})
+        self.teachers = self.teachers.sorted(by: {$0.date! < $1.date!})
         
         
         self.students = school.students?.allObjects as! [Student]
@@ -136,8 +136,6 @@ struct DetailView_Previews: PreviewProvider {
     
     static var dataController = DataController.preview
     
-    
-
     static var previews: some View {
         let school = School(context: dataController.container.viewContext)
         

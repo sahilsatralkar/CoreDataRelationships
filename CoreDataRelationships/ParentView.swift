@@ -29,7 +29,7 @@ struct ParentView: View {
                                 VStack(alignment: .leading) {
                                     Text(school.name ?? "").font(.headline)
                                     Spacer()
-                                    Text("Address: \(school.address ?? "")").font(.subheadline)
+                                    Text("\(school.address ?? "")").font(.subheadline)
                                 }.padding()
                             }
                         }

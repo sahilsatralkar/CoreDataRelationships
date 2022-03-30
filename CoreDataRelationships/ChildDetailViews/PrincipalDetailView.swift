@@ -10,15 +10,12 @@ import SwiftUI
 struct PrincipalDetailView: View {
     
     let principal: Principal
-    
     var teachers : [Teacher] {
-         principal.school?.teachers?.allObjects as! [Teacher]
+        principal.school?.teachers?.allObjects as? [Teacher] ?? []
     }
-    
     var students : [Student] {
-        principal.school?.students?.allObjects as! [Student]
+        principal.school?.students?.allObjects as? [Student] ?? []
     }
-    
     var body: some View {
         Form {
             Section (header: Text("Name")) {
@@ -51,8 +48,13 @@ struct PrincipalDetailView: View {
     }
 }
 
-//struct PrincipalDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PrincipalDetailView()
-//    }
-//}
+struct PrincipalDetailView_Previews: PreviewProvider {
+    
+    static var dataController = DataController.preview
+    
+    static var previews: some View {
+        let principal = Principal(context: dataController.container.viewContext)
+        
+        return PrincipalDetailView(principal: principal)
+    }
+}

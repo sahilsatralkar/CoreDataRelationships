@@ -12,15 +12,15 @@ struct StudentDetailView: View {
     let student : Student
     
     var school : School {
-        student.school!
+        student.school ?? School()
     }
     
     var principal : Principal {
-        student.principal!
+        student.principal ?? Principal()
     }
     
     var teachers : [Teacher] {
-        student.teachers?.allObjects as! [Teacher]
+        student.teachers?.allObjects as? [Teacher] ?? []
     }
     
     var body: some View {
@@ -53,8 +53,12 @@ struct StudentDetailView: View {
     }
 }
 
-//struct StudentDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        StudentDetailView()
-//    }
-//}
+struct StudentDetailView_Previews: PreviewProvider {
+    
+    static let dataController = DataController.preview
+    
+    static var previews: some View {
+        let student = Student(context: dataController.container.viewContext)
+        return StudentDetailView(student: student)
+    }
+}

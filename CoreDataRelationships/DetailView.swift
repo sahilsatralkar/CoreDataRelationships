@@ -12,7 +12,6 @@ struct DetailView: View {
     @EnvironmentObject var dataController: DataController
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    
     let school : School
     
     let teachers : [Teacher]
@@ -130,13 +129,17 @@ struct DetailView: View {
     }
 }
 
-//struct DetailView_Previews: PreviewProvider {
-//    static var dataController = DataController()
-//
-//    static var previews: some View {
-//
-//        DetailView()
-//            .environment(\.managedObjectContext, dataController.container.viewContext)
-//            .environmentObject(dataController)
-//    }
-//}
+struct DetailView_Previews: PreviewProvider {
+    
+    static var dataController = DataController.preview
+    
+    
+
+    static var previews: some View {
+        let school = School(context: dataController.container.viewContext)
+        
+        return DetailView(school: school)
+            .environment(\.managedObjectContext, dataController.container.viewContext)
+            .environmentObject(dataController)
+    }
+}

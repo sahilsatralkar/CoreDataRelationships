@@ -10,17 +10,14 @@ import SwiftUI
 struct TeacherDetailView: View {
     
     let teacher : Teacher
-    
     var school : School {
-        teacher.school!
+        teacher.school ?? School()
     }
-    
     var principal : Principal {
-        teacher.principal!
+        teacher.principal ?? Principal()
     }
-    
     var students : [Student] {
-        teacher.students?.allObjects as! [Student]
+        teacher.students?.allObjects as? [Student] ?? []
     }
     
     var body: some View {
@@ -53,8 +50,12 @@ struct TeacherDetailView: View {
     }
 }
 
-//struct TeacherDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TeacherDetailView()
-//    }
-//}
+struct TeacherDetailView_Previews: PreviewProvider {
+    static var dataController = DataController.preview
+    
+    static var previews: some View {
+        let teacher = Teacher(context: dataController.container.viewContext)
+        
+        return TeacherDetailView(teacher: teacher)
+    }
+}

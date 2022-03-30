@@ -23,8 +23,6 @@ class DataController : ObservableObject {
         }
     }
     
-    
-    
     func createSampleData() {
         let viewContext = container.viewContext
         
@@ -188,7 +186,6 @@ class DataController : ObservableObject {
         student10.school = school
         student10.principal = principal
         student10.teachers = [teacher1, teacher2, teacher3, teacher4, teacher5]
-       
         
         do {
             try viewContext.save()
@@ -197,7 +194,6 @@ class DataController : ObservableObject {
             fatalError("Unable to load sample data: \(error.localizedDescription)")
         }
     }
-    
     
     func save() {
         if container.viewContext.hasChanges {
@@ -209,20 +205,16 @@ class DataController : ObservableObject {
             }
         }
     }
-    
-    
+
     func delete(_ object: NSManagedObject) {
         container.viewContext.delete(object)
     }
     
-    
     func deleteAll() {
-        
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = School.fetchRequest()
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         _ = try? container.viewContext.execute(batchDeleteRequest)
-        
     }
     
     static var preview : DataController = {

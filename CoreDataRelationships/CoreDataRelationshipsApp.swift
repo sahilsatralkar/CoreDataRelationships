@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct CoreDataRelationshipsApp: App {
     
+    
     @StateObject var dataController : DataController
     
     init() {

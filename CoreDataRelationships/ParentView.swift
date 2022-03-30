@@ -43,7 +43,7 @@ struct ParentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Add Sample Data") {
-                        dataController.deleteAll()
+                        //dataController.deleteAll()
                         dataController.createSampleData()
                     }
                 }
@@ -53,7 +53,6 @@ struct ParentView: View {
                     } label: {
                         Image(systemName: "plus")
                     }
-
                 }
             }
             .sheet(isPresented: $showingAddSchool) {
@@ -69,10 +68,14 @@ struct ParentView: View {
             }
             dataController.save()
     }
-   
 }
+
 struct ContentView_Previews: PreviewProvider {
+    static var dataController = DataController.preview
     static var previews: some View {
-        ParentView()
+        
+         ParentView()
+            .environment(\.managedObjectContext, dataController.container.viewContext)
+            .environmentObject(dataController)
     }
 }

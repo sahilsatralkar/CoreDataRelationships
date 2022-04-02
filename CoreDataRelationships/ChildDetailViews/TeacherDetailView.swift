@@ -10,6 +10,8 @@ import SwiftUI
 struct TeacherDetailView: View {
     
     let teacher : Teacher
+        
+    //The school, principal and students objects are fetched from the teacher object
     var school : School? {
         teacher.school
     }

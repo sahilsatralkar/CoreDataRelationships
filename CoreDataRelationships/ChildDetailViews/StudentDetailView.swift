@@ -11,14 +11,14 @@ struct StudentDetailView: View {
     
     let student : Student
     
+    // The school, principal and teachers objects are fetched from
+    // the student object itself
     var school : School? {
         student.school
     }
-    
     var principal : Principal? {
         student.principal 
     }
-    
     var teachers : [Teacher] {
         student.teachers?.allObjects as? [Teacher] ?? []
     }

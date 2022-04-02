@@ -73,7 +73,8 @@ struct AddNewPrincipalView: View {
     }
     
     func saveButton() {
-        
+    
+        //Validation for textfields
         if self.name == "" {
             self.activeAlert = .first
             self.showAlert = true
@@ -86,6 +87,7 @@ struct AddNewPrincipalView: View {
             self.activeAlert = .third
             self.showAlert = true
         }
+        
         else {
             let principal = Principal(context: dataController.container.viewContext)
             

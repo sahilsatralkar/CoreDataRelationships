@@ -63,6 +63,8 @@ struct AddNewSchoolView: View {
         }
     }
     func saveButton(){
+        
+        //Validation for textfields
         if self.name.isEmpty {
             self.activeAlert = .first
             self.showAlert = true
@@ -71,6 +73,7 @@ struct AddNewSchoolView: View {
             self.activeAlert = .second
             self.showAlert = true
         }
+        
         else {
             let school = School(context: dataController.container.viewContext)
             

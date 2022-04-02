@@ -10,12 +10,19 @@ import SwiftUI
 struct PrincipalDetailView: View {
     
     let principal: Principal
+    
+    // The school, teachers and students objects are fetched from
+    // within the principal object itself
+    var school : School? {
+        principal.school 
+    }
     var teachers : [Teacher] {
         principal.school?.teachers?.allObjects as? [Teacher] ?? []
     }
     var students : [Student] {
         principal.school?.students?.allObjects as? [Student] ?? []
     }
+    
     var body: some View {
         Form {
             Section (header: Text("Name")) {
@@ -25,7 +32,7 @@ struct PrincipalDetailView: View {
             }
             Section (header: Text("School")) {
                 List {
-                    Text("\(principal.school?.name ?? "")")
+                    Text("\(school?.name ?? "")")
                 }
             }
             Section (header: Text("Teachers")) {

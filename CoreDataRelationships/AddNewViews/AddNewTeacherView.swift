@@ -80,6 +80,7 @@ struct AddNewTeacherView: View {
     
     func saveButton(){
         
+        //Validation for textfields
         if self.name.isEmpty {
             self.activeAlert = .first
             self.showAlert = true

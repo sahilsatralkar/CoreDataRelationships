@@ -41,9 +41,9 @@
         <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="teachers" inverseEntity="Student"/>
     </entity>
     <elements>
-        <element name="School" positionX="-934.49609375" positionY="-395.2734375" width="128" height="148"/>
-        <element name="Teacher" positionX="-152.375" positionY="-115.046875" width="128" height="178"/>
-        <element name="Student" positionX="-932.18359375" positionY="-81.609375" width="128" height="163"/>
-        <element name="Principal" positionX="-433.7421875" positionY="-393.72265625" width="128" height="163"/>
+        <element name="Principal" positionX="-433.7421875" positionY="-393.72265625" width="128" height="149"/>
+        <element name="School" positionX="-934.49609375" positionY="-395.2734375" width="128" height="134"/>
+        <element name="Student" positionX="-932.18359375" positionY="-81.609375" width="128" height="149"/>
+        <element name="Teacher" positionX="-152.375" positionY="-115.046875" width="128" height="164"/>
     </elements>
 </model>

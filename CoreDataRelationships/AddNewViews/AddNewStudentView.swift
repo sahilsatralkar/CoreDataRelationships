@@ -71,6 +71,8 @@ struct AddNewStudentView: View {
         }
     }
     func saveButton(){
+        
+        //Validation for textfields
         if self.name.isEmpty {
             self.activeAlert = .first
             self.showAlert = true
@@ -83,6 +85,7 @@ struct AddNewStudentView: View {
             self.activeAlert = .third
             self.showAlert = true
         }
+        
         else {
             let student = Student(context: dataController.container.viewContext)
             
